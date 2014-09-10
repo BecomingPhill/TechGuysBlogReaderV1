@@ -198,6 +198,9 @@ public class MainListActivity extends ListActivity {
                     Log.i(TAG, "Unsuccessful HTTP Response Code: " + responseCode);
                 }
             }
+            catch (NegativeArraySizeException e) {
+                logException(e);
+            }
             catch (MalformedURLException e) {
                 logException(e);
             }
@@ -207,6 +210,7 @@ public class MainListActivity extends ListActivity {
             catch (Exception e) {
                 logException(e);
             }
+
 
             return jsonResponse;
         }
